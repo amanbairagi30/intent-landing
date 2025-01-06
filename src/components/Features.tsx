@@ -1,7 +1,7 @@
 import { featuresOne } from "@/constants/data";
 import { Icon, IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image"; // Import NextImage
+import { StaticImageData } from "next/image"; // Import NextImage
 import { cn } from "@/lib/utils";
 
 interface Feature {

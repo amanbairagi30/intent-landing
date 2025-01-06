@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Figtree, Didact_Gothic, Urbanist } from "next/font/google";
+import { Figtree, Urbanist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
