@@ -1,4 +1,3 @@
-import { featuresOne } from "@/constants/data";
 import { Icon, IconArrowRight } from "@tabler/icons-react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
