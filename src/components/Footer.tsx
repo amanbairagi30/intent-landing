@@ -4,6 +4,23 @@ import IntentLogo from "./intent-logo";
 export default function Footer() {
   return (
     <footer className="w-full border-t bg-background">
+      <div className="flex items-center justify-center gap-0">
+        {["I", "n", "t", "e", "n", "t", "J", "s"].map((item, index, arr) => {
+          return (
+            <span
+              // onClick={() => router.push("/")}
+              key={`item-${index}`}
+              className={`text-[4rem] md:text-[6rem] lg:text-[15rem] font-bold ${
+                index + 1 <= arr.length / 2
+                  ? "hover:-rotate-12"
+                  : "hover:rotate-12"
+              }  cursor-pointer transition-all duration-200 ease-out hover:bg-primary  hover:scale-110 bg-gradient-to-b from-black/20 dark:from-white/20 bg-clip-text text-transparent`}
+            >
+              {item}
+            </span>
+          );
+        })}
+      </div>
       <div className="py-6 px-4 sm:px-6 lg:px-8">
         <div className="flex gap-1 items-center justify-center">
           <IntentLogo src={images.intentLogoDark} />
@@ -48,7 +65,8 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <div className="mt-10 text-center text-sm text-muted-foreground">
+
+        <div className="mt-4 text-center text-sm text-muted-foreground">
           © {new Date().getFullYear()} IntentJs. All rights reserved.
         </div>
       </div>

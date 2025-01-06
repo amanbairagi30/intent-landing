@@ -1,4 +1,3 @@
-import { images } from "@/images/image";
 import {
   IconDatabase,
   IconTerminal2,
@@ -86,7 +85,7 @@ export const featuresTwo = [
     icon: IconRoute,
     className: "col-span-1 row-span-2",
     href: "/request-handling",
-    image: images.requests,
+    image: null,
   },
   {
     title: "Mailers",
