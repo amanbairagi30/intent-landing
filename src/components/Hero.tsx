@@ -41,18 +41,19 @@ export default function Hero() {
             </div>
           </Link>
         </div>
-        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl flex flex-col items-center font-bold tracking-tighter px-4">
+        <div className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl flex flex-col items-center font-bold tracking-tighter px-4">
           <span>The Laravel-Inspired Framework</span>
-          <div className="flex flex-wrap justify-center items-center gap-2">
-            for Modern{" "}
+          <div className="flex flex-wrap justify-center items-center">
+            for Modern
             <span
-              className="text-primary mt-2 mx-1 bg-primary/20 text-2
-            xl sm:text-4xl md:text-5xl flex border-2 border-primary rounded-md px-3 sm:px-4 py-1 sm:py-2 items-center gap-2"
+              className="text-primary md:flex hidden mt-2 mx-2 bg-primary/20 text-2
+            xl text-2xl sm:text-4xl md:text-5xl border-2 border-primary rounded-md px-3 sm:px-4 py-1 sm:py-2 items-center gap-2"
             >
-              <IconBrandNodejs className="w-6 h-6 md:w-8  md:h-8 sm:w-10 sm:h-10" />{" "}
+              <IconBrandNodejs className="w-6 h-6 md:w-8 md:h-8 sm:w-10 sm:h-10" />{" "}
               Node.js
-            </span>{" "}
-            Applications.
+            </span>
+            <span className="flex md:hidden">Node.js</span>
+            <span>Applications.</span>
           </div>
         </div>
         <p className="mx-auto max-w-[700px] text-base sm:text-lg text-muted-foreground px-4">

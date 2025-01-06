@@ -18,9 +18,9 @@ export const featuresOne = [
     description:
       "Built-in multi-store caching with Redis and in-memory options to improve application latency.",
     icon: IconBolt,
-    className: "md:col-span-1 md:row-span-2",
+    className: "md:col-span-1 md:row-span-4",
     href: "/cache-management",
-    image: images.cache,
+    image: null,
   },
   {
     title: "Console Utilities",
@@ -116,3 +116,9 @@ export const featuresTwo = [
     image: null,
   },
 ];
+
+export const ctaSection = {
+  title: "Ready to deep dive into IntentJs?",
+  buttonText: "Explore Now",
+  buttonHref: "/docs/getting-started",
+};

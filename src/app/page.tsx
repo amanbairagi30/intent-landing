@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Features from "@/components/Features";
 import GetStarted from "@/components/GetStarted";
 import { featuresOne, featuresTwo } from "@/constants/data";
+import { CTASection } from "@/components/CTASection";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <FAQ />
         </div>
+        <CTASection />
       </main>
       <Footer />
     </div>
