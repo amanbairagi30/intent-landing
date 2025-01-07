@@ -7,7 +7,7 @@ interface Feature {
   title: string;
   description: string;
   icon: Icon;
-  className: string;
+  class: string;
   href: string;
   image: StaticImageData | null;
 }
@@ -39,19 +39,27 @@ export default function Features({
             <div
               key={index}
               className={cn(
-                feature.className,
+                index === 0
+                  ? "md:col-span-2 md:row-span-2"
+                  : index === 7
+                  ? "md:col-span-1 md:row-span-2"
+                  : "",
                 `relative group overflow-hidden bg-acccent/20 backdrop-blur-sm rounded-3xl p-8 hover:bg-accent/10 transition-all duration-300 border border-white/10`
               )}
             >
               <feature.icon className="w-10 h-10 text-primary mb-4" />
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               <p className="text-gray-400">{feature.description}</p>
-              {feature.image && ( // Check if image is not null
-                <div className=" w-10 h-10">
+              {feature.image && (
+                <div
+                  className={`absolute md:block hidden -bottom-40 -right-4 ${
+                    index === 0 ? "w-[30rem] h-[30rem]" : "w-[22rem] h-[22rem]"
+                  }`}
+                >
                   <Image
                     src={feature.image}
                     alt={feature.title}
-                    className="absolute hidden md:block md:-bottom-20 -right-4 object-cover"
+                    className="object-cover"
                   />
                 </div>
               )}

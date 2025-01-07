@@ -24,11 +24,11 @@ export default function Home() {
           features={featuresOne}
         />
         <GetStarted />
-        <Features
+        {/* <Features
           title="Improve Productivity"
           description="Use the features of Intent to improve your productivity."
           features={featuresTwo}
-        />
+        /> */}
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <BookCall />
           <FAQ />
