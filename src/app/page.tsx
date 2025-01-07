@@ -5,7 +5,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Features from "@/components/Features";
 import GetStarted from "@/components/GetStarted";
-import { featuresOne, featuresTwo } from "@/constants/data";
+import { featuresOne } from "@/constants/data";
 import { CTASection } from "@/components/CTASection";
 import BookCall from "@/components/book-call";
 
