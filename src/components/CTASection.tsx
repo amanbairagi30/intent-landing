@@ -45,28 +45,27 @@ export function CTASection() {
       rotate: 100,
       opacity: 0,
       scale: 0.8,
-      x: 110,
+      x: 0,
       filter: "blur(30px)",
     },
     visible: {
-      rotate: 90,
+      rotate: 95,
       filter: "blur(50px)",
       opacity: 1,
       scale: 1,
-      x: -110,
+      x: -30,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 10,
-        duration: 1.2,
-        ease: "linear",
+        stiffness: 10,
+        duration: 0.1,
+        ease: "easeInOut",
       },
     },
   };
 
   return (
     <motion.div
-      className="w-full mx-auto py-16 px-4 max-w-5xl"
+      className="w-full mx-auto py-4 my-14 mb-24 px-4 rounded-lg overflow-hidden max-w-5xl"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -74,17 +73,8 @@ export function CTASection() {
     >
       <div className="bg-gradient-to-b relative overflow-hidden from-accent/40 rounded-lg p-8 text-center">
         <motion.div
-          className="md:bottom-[-18rem] left-[30%] opacity-100 z-[-1] absolute bg-gradient-to-t from-primary to-primary/90 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]"
+          className="bottom-[-10rem] md:bottom-[-19rem] left-[30%] opacity-100 z-[-1] absolute bg-gradient-to-t from-primary to-primary/90 blur-[4em] rounded-xl transition-all translate-x-[-50%] w-[10rem] md:w-[10rem] h-[10rem] md:h-[30rem]"
           variants={gradientVariants}
-          animate={{
-            rotate: [90, 180, 270, 360],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
         />
 
         <motion.h2 className="text-3xl font-bold mb-6" variants={titleVariants}>

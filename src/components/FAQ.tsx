@@ -7,14 +7,14 @@ import {
 
 export default function FAQ() {
   return (
-    <section className="py-24">
+    <section className="py-14">
       <h2 className="text-3xl font-bold text-center mb-12">
         Frequently Asked Questions
       </h2>
       <Accordion
         type="single"
         collapsible
-        className="max-w-lg text-base mx-auto"
+        className="max-w-xl text-base mx-auto"
       >
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-lg font-semibold">

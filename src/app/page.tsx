@@ -23,17 +23,13 @@ export default function Home() {
           description="Turbocharge your coding All tools on deck."
           features={featuresOne}
         />
-        <GetStarted />
-        {/* <Features
-          title="Improve Productivity"
-          description="Use the features of Intent to improve your productivity."
-          features={featuresTwo}
-        /> */}
+
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <GetStarted />
           <BookCall />
           <FAQ />
+          <CTASection />
         </div>
-        <CTASection />
       </main>
       <Footer />
     </div>
