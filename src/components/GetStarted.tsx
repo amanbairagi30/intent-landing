@@ -4,6 +4,7 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useState } from "react";
 import { IconCheck, IconCopy } from "@tabler/icons-react";
 import { Button } from "./ui/button";
+import { motion } from "motion/react";
 
 const steps = [
   {
@@ -58,6 +59,30 @@ export default function GetStarted() {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+    visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+  };
+
+  const hoverVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
     <section className="py-20 my-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,11 +95,18 @@ export default function GetStarted() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        <motion.div
+          className="mt-16 grid gap-8 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {steps.map((step, index) => (
-            <div
+            <motion.div
               key={step.number}
               className="relative group bg-accent/20 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              variants={itemVariants}
+              whileHover={hoverVariants.hover}
             >
               <div className="flex items-center space-x-4 mb-4">
                 <span className="text-4xl font-bold text-primary">
@@ -102,9 +134,9 @@ export default function GetStarted() {
                   )}
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-6">Quick Example</h3>

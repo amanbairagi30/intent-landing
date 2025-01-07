@@ -55,7 +55,7 @@ export default function Features({
                   />
                 </div>
               )}
-              <div className="md:bottom-[-29rem] left-[50%] group-hover:opacity-100 opacity-0 z-[-1] absolute bg-gradient-to-t from-primary to-green-900/90  blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]"></div>
+              <div className="md:bottom-[-29rem] left-[50%] group-hover:opacity-100 opacity-0 z-[-1] absolute bg-gradient-to-t from-primary to-green-900/90  blur-[6em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]"></div>
               <Link
                 href={feature.href}
                 className="text-primary flex items-center mt-2 text-sm gap-2 bg-transparent"

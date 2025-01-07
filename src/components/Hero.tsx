@@ -12,6 +12,7 @@ import Link from "next/link";
 import IntentLogo from "./intent-logo";
 import { images } from "@/images/image";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
@@ -22,10 +23,39 @@ export default function Hero() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  // Define animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
-    <section className="py-12 relative sm:py-24 text-center">
-      <div className="space-y-6 sm:space-y-8">
-        <div className="flex justify-center px-4">
+    <motion.section
+      className="py-12 relative sm:py-24 text-center"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div className="space-y-6 sm:space-y-8">
+        <motion.div
+          className="flex justify-center px-4"
+          variants={itemVariants}
+        >
           <Link
             href="/changelog"
             className="inline-flex items-center border-2 border-primary/50 rounded-full 
@@ -40,8 +70,11 @@ export default function Hero() {
               <IconArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
             </div>
           </Link>
-        </div>
-        <div className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl flex flex-col items-center font-bold tracking-tighter px-4">
+        </motion.div>
+        <motion.div
+          className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl flex flex-col items-center font-bold tracking-tighter px-4"
+          variants={itemVariants}
+        >
           <span>The Laravel-Inspired Framework</span>
           <div className="flex flex-wrap justify-center items-center">
             for Modern
@@ -52,11 +85,14 @@ export default function Hero() {
               <IconBrandNodejs className="w-6 h-6 md:w-8 md:h-8 sm:w-10 sm:h-10" />{" "}
               Node.js
             </span>
-            <span className="flex md:hidden">Node.js</span>
+            <span className="flex mx-2 md:hidden"> Node.js</span>
             <span>Applications.</span>
           </div>
-        </div>
-        <p className="mx-auto max-w-[700px] text-base sm:text-lg text-muted-foreground px-4">
+        </motion.div>
+        <motion.p
+          className="mx-auto max-w-[700px] text-base sm:text-lg text-muted-foreground px-4"
+          variants={itemVariants}
+        >
           A <span></span>refreshing take on traditional nodejs frameworks,
           change the way you build your products.{" "}
           <span className="font-semibold text-foreground">Intent</span> is an
@@ -68,8 +104,11 @@ export default function Hero() {
           <span className="font-semibold text-foreground">
             developer experience.
           </span>
-        </p>
-        <div className="flex flex-col gap-4 sm:flex-row justify-center px-4">
+        </motion.p>
+        <motion.div
+          className="flex flex-col gap-4 sm:flex-row justify-center px-4"
+          variants={itemVariants}
+        >
           <Button className="font-semibold" size="lg" asChild>
             <Link href="/get-started">
               Get Started <IconArrowRight />
@@ -80,9 +119,9 @@ export default function Hero() {
               Read Docs <IconBook />
             </Link>
           </Button>
-        </div>
+        </motion.div>
 
-        <div className="px-4">
+        <motion.div className="px-4" variants={itemVariants}>
           <div
             className="flex items-center gap-2 bg-muted/20 w-fit mx-auto p-3 sm:p-4 rounded-xl mt-2 text-primary font-mono text-sm sm:text-base cursor-pointer hover:bg-muted/30 transition-colors"
             onClick={copyCommand}
@@ -98,9 +137,9 @@ export default function Hero() {
               <IconCopy className="w-4 h-4" />
             )}
           </div>
-        </div>
-      </div>
-      <div className="md:bottom-[-29rem] left-[50%] z-[-1] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary to-green-900/90  blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]"></div>
-    </section>
+        </motion.div>
+      </motion.div>
+      <div className="bottom-[-10rem] md:bottom-[-29rem] left-[50%] z-[-1] absolute bg-gradient-to-t opacity-50 dark:opacity-100 from-primary to-green-900/50 blur-[8em] rounded-xl transition-all translate-x-[-50%] duration-700 ease-out w-[10rem] md:w-[30rem] h-[20rem] md:h-[30rem] rotate-[54deg]"></div>
+    </motion.section>
   );
 }

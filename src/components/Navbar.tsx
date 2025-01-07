@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full sticky top-0 z-50">
+    <nav className="w-full sticky top-0 z-50 px-2">
       <div className="mx-auto backdrop-blur supports-[backdrop-filter]:bg-accent/40 mt-4 rounded-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex flex-1 items-center gap-2">
@@ -78,7 +78,7 @@ export default function Navbar() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden absolute left-0 right-0  bg-background/95 shadow-xl shadow-background backdrop-blur-3xl supports-[backdrop-filter]:bg-background/90 border-b">
+          <div className="md:hidden py-4 absolute left-0 right-0 bg-background shadow-xl shadow-background backdrop-blur-3xl supports-[backdrop-filter]:bg-background rounded-xl">
             <div className="px-4 pt-2 pb-3 space-y-1">
               <Link
                 href="/docs"
@@ -96,12 +96,12 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/support"
-                className="block px-3 py-2 text-base font-medium hover:bg-accent/70 rounded-lg"
+                className="block px-3 py-2 mb-6 text-base font-medium hover:bg-accent/70 rounded-lg"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Support
               </Link>
-              <div className="flex gap-4 mt-6 mx-2">
+              <div className="flex gap-4 mx-2">
                 <a
                   href="https://github.com"
                   className="text-gray-800 dark:text-white"
